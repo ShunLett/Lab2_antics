@@ -59,43 +59,6 @@ public class Antics {
 
         return true; // It's abecedarian
     }
-    public static String reverseString(String word) {
-        StringBuilder reversed = new StringBuilder();
-        for (int i = word.length() - 1; i >= 0; i--) {
-            reversed.append(word.charAt(i));
-        }
-        return reversed.toString();
-    }
-
-
-    /**
-     * Counts the number of vowels in a string.
-     *
-     * @param word The string to check
-     * @return The number of vowels in the string
-     */
-    public static int countVowels(String word) {
-        int count = 0;
-        String vowels = "aeiouAEIOU";
-        for (int i = 0; i < word.length(); i++) {
-            if (vowels.indexOf(word.charAt(i)) != -1) {
-                count++;
-            }
-        }
-        return count;
-    }
-
-
-    /**
-     * Removes all spaces from a string.
-     *
-     * @param word The string from which spaces should be removed
-     * @return The string without spaces
-     */
-    public static String removeSpaces(String word) {
-        return word.replace(" ", "");
-    }
-
 
     /**
      * Checks if a string is a pangram (contains all 26 letters of the alphabet).
