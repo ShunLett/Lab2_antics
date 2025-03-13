@@ -59,4 +59,71 @@ public class Antics {
 
         return true; // It's abecedarian
     }
+    public static String reverseString(String word) {
+        StringBuilder reversed = new StringBuilder();
+        for (int i = word.length() - 1; i >= 0; i--) {
+            reversed.append(word.charAt(i));
+        }
+        return reversed.toString();
+    }
+
+
+    /**
+     * Counts the number of vowels in a string.
+     *
+     * @param word The string to check
+     * @return The number of vowels in the string
+     */
+    public static int countVowels(String word) {
+        int count = 0;
+        String vowels = "aeiouAEIOU";
+        for (int i = 0; i < word.length(); i++) {
+            if (vowels.indexOf(word.charAt(i)) != -1) {
+                count++;
+            }
+        }
+        return count;
+    }
+
+
+    /**
+     * Removes all spaces from a string.
+     *
+     * @param word The string from which spaces should be removed
+     * @return The string without spaces
+     */
+    public static String removeSpaces(String word) {
+        return word.replace(" ", "");
+    }
+
+
+    /**
+     * Checks if a string is a pangram (contains all 26 letters of the alphabet).
+     *
+     * @param word The string to check
+     * @return True if the string is a pangram, false otherwise
+     */
+    public static boolean isPangram(String word) {
+        String lowerCaseInput = word.toLowerCase();
+        for (char ch = 'a'; ch <= 'z'; ch++) {
+            if (lowerCaseInput.indexOf(ch) == -1) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+
+    /**
+     * Capitalizes only the first letter of a string.
+     *
+     * @param word The string to capitalize
+     * @return The string with the first letter capitalized
+     */
+    public static String capitalizeFirstLetter(String word) {
+        if (word == null || word.isEmpty()) {
+            return word;
+        }
+        return Character.toUpperCase(word.charAt(0)) + word.substring(1).toLowerCase();
+    }
 }
